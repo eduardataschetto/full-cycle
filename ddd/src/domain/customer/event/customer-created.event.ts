@@ -1,4 +1,4 @@
-import { EventInterface } from "../../@shared/event/domain/domain-event.interface";
+import { EventInterface } from '../../@shared/event/domain/domain-event.interface';
 
 export default class CustomerCreatedEvent implements EventInterface {
   name: string = 'CustomerCreatedEvent';
@@ -9,10 +9,9 @@ export default class CustomerCreatedEvent implements EventInterface {
     name: string;
     address: string;
   };
-  
+
   constructor(eventData: any) {
     this.dateTime = new Date();
     this.eventData = eventData;
   }
-
 }

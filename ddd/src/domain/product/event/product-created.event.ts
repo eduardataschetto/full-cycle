@@ -1,4 +1,4 @@
-import { EventInterface } from "../../@shared/event/domain/domain-event.interface";
+import { EventInterface } from '../../@shared/event/domain/domain-event.interface';
 
 export default class ProductCreatedEvent implements EventInterface {
   name: string = 'ProductCreatedEvent';

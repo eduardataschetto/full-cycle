@@ -1,28 +1,34 @@
-import { BelongsTo, Column, ForeignKey, HasMany, Model, PrimaryKey, Table } from "sequelize-typescript";
-import CustomerModel from "../../../customer/repository/sequelize/cutomer.model";
-import OrderItemModel from "./order-item.model";
+import {
+  BelongsTo,
+  Column,
+  ForeignKey,
+  HasMany,
+  Model,
+  PrimaryKey,
+  Table,
+} from 'sequelize-typescript';
+import CustomerModel from '../../../customer/repository/sequelize/cutomer.model';
+import OrderItemModel from './order-item.model';
 
 @Table({
-    tableName: "orders",
-    timestamps: false,
+  tableName: 'orders',
+  timestamps: false,
 })
 export default class OrderModel extends Model {
-    
-    @PrimaryKey
-    @Column
-    declare id: string
+  @PrimaryKey
+  @Column
+  declare id: string;
 
-    @ForeignKey(() => CustomerModel)
-    @Column( { allowNull: false })
-    declare customer_id: string
+  @ForeignKey(() => CustomerModel)
+  @Column({ allowNull: false })
+  declare customer_id: string;
 
-    @BelongsTo(() => CustomerModel)
-    declare customer: CustomerModel
+  @BelongsTo(() => CustomerModel)
+  declare customer: CustomerModel;
 
-    @HasMany(() => OrderItemModel)
-    declare items: OrderItemModel[]
+  @HasMany(() => OrderItemModel)
+  declare items: OrderItemModel[];
 
-    @Column( { allowNull: false })
-    declare total: number
-
+  @Column({ allowNull: false })
+  declare total: number;
 }

@@ -1,4 +1,4 @@
-import { EventInterface } from "../../@shared/event/domain/domain-event.interface";
+import { EventInterface } from '../../@shared/event/domain/domain-event.interface';
 
 export default class CustomerAddressChangedEvent implements EventInterface {
   name: string = 'CustomerAddressChangedEvent';
@@ -13,14 +13,14 @@ export default class CustomerAddressChangedEvent implements EventInterface {
   }
 
   private validate() {
-    if(!this.eventData.customerName){
-      throw new Error("Name is required");
+    if (!this.eventData.customerName) {
+      throw new Error('Name is required');
     }
-    if(!this.eventData.customerId){
-      throw new Error("ID is required");
+    if (!this.eventData.customerId) {
+      throw new Error('ID is required');
     }
-    if(!this.eventData.address){
-      throw new Error("Address is required");
+    if (!this.eventData.address) {
+      throw new Error('Address is required');
     }
   }
 }

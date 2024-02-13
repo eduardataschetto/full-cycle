@@ -1,5 +1,5 @@
-export interface EventInterface{
-    name: string;
-    dateTime: Date
-    eventVersion: number;
+export interface EventInterface {
+  name: string;
+  dateTime: Date;
+  eventVersion: number;
 }
