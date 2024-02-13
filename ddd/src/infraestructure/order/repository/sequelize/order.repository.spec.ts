@@ -189,7 +189,6 @@ describe("Order repository tests", () => {
         await orderRepository.create(order);
 
         const orderModel = await orderRepository.find(order.id);
-        console.log(orderModel)
 
         expect(orderModel).toStrictEqual(order);
     })
